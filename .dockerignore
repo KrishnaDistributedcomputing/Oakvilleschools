@@ -1,0 +1,9 @@
+node_modules
+dist
+.next
+.git
+.env
+*.md
+infra
+web/node_modules
+web/.next

@@ -1,0 +1,129 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: oakville_schools
+      POSTGRES_USER: oakville
+      POSTGRES_PASSWORD: oakville
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./src/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U oakville -d oakville_schools']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  typesense:
+    image: typesense/typesense:0.25.2
+    ports:
+      - '8108:8108'
+    environment:
+      TYPESENSE_API_KEY: oakville-typesense-key
+      TYPESENSE_DATA_DIR: /data
+    volumes:
+      - typesense_data:/data
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/data
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node dist/api/server.js
+    ports:
+      - '3001:3001'
+    environment:
+      DATABASE_URL: postgresql://oakville:oakville@postgres:5432/oakville_schools
+      REDIS_URL: redis://redis:6379
+      TYPESENSE_HOST: typesense
+      TYPESENSE_PORT: 8108
+      TYPESENSE_API_KEY: oakville-typesense-key
+      API_PORT: 3001
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node dist/scheduler/jobScheduler.js
+    environment:
+      DATABASE_URL: postgresql://oakville:oakville@postgres:5432/oakville_schools
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  playwright-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.playwright
+    command: node dist/workers/playwrightWorker.js
+    environment:
+      DATABASE_URL: postgresql://oakville:oakville@postgres:5432/oakville_schools
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  enrichment-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node dist/workers/enrichmentWorker.js
+    environment:
+      DATABASE_URL: postgresql://oakville:oakville@postgres:5432/oakville_schools
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      NEXT_PUBLIC_API_URL: http://api:3001
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
+  typesense_data:
+  minio_data:

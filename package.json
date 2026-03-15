@@ -1,0 +1,56 @@
+{
+  "name": "oakville-schools-directory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Data-driven directory of schools in Oakville, Ontario",
+  "scripts": {
+    "build": "tsc",
+    "dev:api": "ts-node src/api/server.ts",
+    "dev:web": "cd web && npm run dev",
+    "crawl:hdsb": "ts-node src/crawler/hdsbAdapter.ts",
+    "crawl:hcdsb": "ts-node src/crawler/hcdsbAdapter.ts",
+    "import:private": "ts-node src/crawler/privateSchoolImport.ts",
+    "import:childcare": "ts-node src/crawler/childcareImport.ts",
+    "worker:playwright": "ts-node src/workers/playwrightWorker.ts",
+    "worker:enrichment": "ts-node src/workers/enrichmentWorker.ts",
+    "scheduler": "ts-node src/scheduler/jobScheduler.ts",
+    "entity:resolve": "ts-node src/entity/entityResolution.ts",
+    "db:migrate": "ts-node src/db/migrate.ts",
+    "lint": "eslint src/",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "bullmq": "^5.0.0",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.0",
+    "ioredis": "^5.3.0",
+    "node-cron": "^3.0.0",
+    "pg": "^8.12.0",
+    "playwright": "^1.42.0",
+    "robots-parser": "^3.0.0",
+    "string-similarity": "^4.0.4",
+    "typesense": "^1.8.0",
+    "uuid": "^9.0.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/pg": "^8.10.0",
+    "@types/string-similarity": "^4.0.2",
+    "@types/uuid": "^9.0.7",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

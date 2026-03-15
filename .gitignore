@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+*.log
+web/.next/
+web/node_modules/
+.DS_Store
+applogs/
+applogs.zip
+buildlog.txt
+hdsb_page.html
+hcdsb_page.html
+migrate.py
