@@ -51,7 +51,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/oakville-private-schools" role="menuitem">Private</a>
               <a href="/oakville-montessori-schools" role="menuitem">Montessori</a>
               <a href="/oakville-daycares" role="menuitem">Daycares</a>
-              <a href="/compare" role="menuitem" className="nav-highlight">Compare</a>
               <a href="/resources" role="menuitem">Resources</a>
               <a href="/oakville-schools" role="menuitem" className="nav-all">All Schools</a>
             </div>

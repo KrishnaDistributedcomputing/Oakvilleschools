@@ -254,12 +254,11 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Compare Schools CTA */}
+      {/* Browse CTA */}
       <section className="resource-cta">
-        <h2>Ready to Compare Schools?</h2>
-        <p>Use our side-by-side comparison tool to evaluate schools on ratings, programs, contact info, and more.</p>
-        <a href="/compare" className="cta-btn cta-btn-primary">📊 Compare Schools →</a>
-        <a href="/oakville-schools" className="cta-btn cta-btn-outline">🔍 Browse All Schools →</a>
+        <h2>Ready to Find a School?</h2>
+        <p>Search, filter, and browse 280+ schools and daycares in Oakville.</p>
+        <a href="/oakville-schools" className="cta-btn cta-btn-primary">🔍 Browse All Schools →</a>
       </section>
     </>
   );
