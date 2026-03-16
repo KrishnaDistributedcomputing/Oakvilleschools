@@ -2,8 +2,23 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Oakville Schools Directory',
-  description: 'Find public, Catholic, private, Montessori schools and daycares in Oakville, Ontario. Search 259+ schools with ratings, reviews, and contact info.',
+  title: {
+    default: 'Oakville Schools Directory | Find Schools in Oakville, Ontario',
+    template: '%s | Oakville Schools Directory',
+  },
+  description: 'Search 259+ public, Catholic, private, Montessori schools and daycares in Oakville, Ontario. Compare ratings, reviews, hours & contact info.',
+  keywords: 'Oakville schools, schools in Oakville Ontario, Oakville public schools, HDSB schools, HCDSB schools, Oakville private schools, Oakville Montessori, Oakville daycares, best schools Oakville',
+  metadataBase: new URL('https://ep-oakvilleschools-dge4fadcdedphcgw.b02.azurefd.net'),
+  openGraph: {
+    title: 'Oakville Schools Directory — Find the Best School for Your Child',
+    description: 'Comprehensive guide to 259+ schools in Oakville, ON. Search, compare ratings & find the right fit.',
+    url: 'https://ep-oakvilleschools-dge4fadcdedphcgw.b02.azurefd.net',
+    siteName: 'Oakville Schools Directory',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://ep-oakvilleschools-dge4fadcdedphcgw.b02.azurefd.net' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
