@@ -154,9 +154,81 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Category Cards */}
+      {/* 1. NEWS & UPDATES — First section after hero for freshness */}
+      <section className="news-section" aria-label="Latest admissions and enrollment news">
+        <h2 className="section-title">📰 Latest News &amp; Enrollment Updates</h2>
+        <p className="section-subtitle">Registration deadlines, open houses, and enrollment news — updated March 2026.</p>
+
+        {/* Urgent deadlines row */}
+        <div className="news-urgent-row">
+          <article className="news-card news-urgent">
+            <div className="news-tag">🔴 Deadline</div>
+            <h3>HDSB Kindergarten Registration Now Open</h3>
+            <time className="news-date" dateTime="2026-03">Updated March 2026</time>
+            <p>Registration for JK &amp; SK for the 2026-2027 school year is now open. Children born in 2022 are eligible for JK. Register online or visit your local school.</p>
+            <a href="https://www.hdsb.ca/schools/Pages/Registration.aspx" target="_blank" rel="noopener noreferrer" className="news-link">
+              Register at HDSB →
+            </a>
+          </article>
+
+          <article className="news-card news-urgent">
+            <div className="news-tag">🔴 Deadline</div>
+            <h3>HCDSB Catholic School Registration</h3>
+            <time className="news-date" dateTime="2026-03">Updated March 2026</time>
+            <p>HCDSB is accepting registrations for new students. Catholic baptismal certificate required. French Immersion has separate deadlines.</p>
+            <a href="https://www.hcdsb.org" target="_blank" rel="noopener noreferrer" className="news-link">
+              Visit HCDSB →
+            </a>
+          </article>
+
+          <article className="news-card news-urgent">
+            <div className="news-tag">🔴 Spring 2026</div>
+            <h3>Grade 9 Transition &mdash; Course Selection</h3>
+            <time className="news-date" dateTime="2026-03">Spring 2026</time>
+            <p>Grade 8 students entering secondary school should complete course selection through their guidance office. IB, AP, and Arts programs may have additional requirements.</p>
+            <a href="/oakville-public-schools" className="news-link">
+              Browse Secondary Schools →
+            </a>
+          </article>
+        </div>
+
+        {/* Other updates */}
+        <div className="news-grid">
+          <article className="news-card">
+            <div className="news-tag">📅 Open Houses</div>
+            <h3>Private School Open Houses</h3>
+            <time className="news-date" dateTime="2026-03">March &mdash; May 2026</time>
+            <p>Appleby College, MacLachlan College, Fern Hill School, and St. Mildred&apos;s-Lightbourn offer spring tours and information sessions for prospective families.</p>
+            <a href="/oakville-private-schools" className="news-link">
+              Browse Private Schools →
+            </a>
+          </article>
+
+          <article className="news-card">
+            <div className="news-tag">🌱 Montessori</div>
+            <h3>Montessori Enrollment (Ages 2-6)</h3>
+            <time className="news-date" dateTime="2026-03">Ongoing</time>
+            <p>Rolling admissions for Casa (ages 2.5-6) and Elementary (ages 6-12). Tours by appointment. Spaces fill quickly for fall.</p>
+            <a href="/oakville-montessori-schools" className="news-link">
+              Browse Montessori Schools →
+            </a>
+          </article>
+
+          <article className="news-card">
+            <div className="news-tag">👶 Childcare</div>
+            <h3>Licensed Daycare Waitlists</h3>
+            <time className="news-date" dateTime="2026-03">Ongoing</time>
+            <p>Register early through Halton Region&apos;s <strong>OneList</strong> system at onelisthalton.ca. Infant and toddler spots are most competitive.</p>
+            <a href="/oakville-daycares" className="news-link">
+              Browse Daycares →
+            </a>
+          </article>
+        </div>
+      </section>
+
+      {/* 2. BROWSE BY TYPE — organized category cards */}
       <section className="home-categories" aria-label="Browse by school type">
-        <h2 className="section-title">Browse Schools by Type</h2>
+        <h2 className="section-title">🏫 Browse Schools by Type</h2>
         <div className="category-grid">
           {stats.byType.map((item) => (
             <a
@@ -177,74 +249,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* News & Updates — Admissions & Enrollment */}
-      <section className="news-section" aria-label="Latest admissions and enrollment news">
-        <h2 className="section-title">📰 Admissions & Enrollment Updates</h2>
-        <p className="section-subtitle">Stay informed about registration deadlines, open houses, and enrollment news for Oakville schools.</p>
-        <div className="news-grid">
-          <article className="news-card news-urgent">
-            <div className="news-tag">🔴 Deadline</div>
-            <h3>HDSB Kindergarten Registration Now Open</h3>
-            <p className="news-date">Updated March 2026</p>
-            <p>Registration for Junior Kindergarten (JK) and Senior Kindergarten (SK) for the 2026-2027 school year is now open. Children born in 2022 are eligible for JK. Register online through the HDSB portal or visit your local school.</p>
-            <a href="https://www.hdsb.ca/schools/Pages/Registration.aspx" target="_blank" rel="noopener noreferrer" className="news-link">
-              Register at HDSB →
-            </a>
-          </article>
-
-          <article className="news-card news-urgent">
-            <div className="news-tag">🔴 Deadline</div>
-            <h3>HCDSB Catholic School Registration</h3>
-            <p className="news-date">Updated March 2026</p>
-            <p>Halton Catholic District School Board is accepting registrations for new students. A Catholic baptismal certificate is required. French Immersion applications have separate deadlines — check your local school.</p>
-            <a href="https://www.hcdsb.org" target="_blank" rel="noopener noreferrer" className="news-link">
-              Visit HCDSB →
-            </a>
-          </article>
-
-          <article className="news-card">
-            <div className="news-tag">📅 Open Houses</div>
-            <h3>Private School Open Houses — Spring 2026</h3>
-            <p className="news-date">March — May 2026</p>
-            <p>Many Oakville private schools hold spring open houses for prospective families. Appleby College, MacLachlan College, Fern Hill School, and St. Mildred&apos;s-Lightbourn offer tours and information sessions.</p>
-            <a href="/oakville-private-schools" className="news-link">
-              Browse Private Schools →
-            </a>
-          </article>
-
-          <article className="news-card">
-            <div className="news-tag">🌱 Montessori</div>
-            <h3>Montessori Enrollment for Ages 2-6</h3>
-            <p className="news-date">Ongoing</p>
-            <p>Oakville Montessori schools accept rolling admissions for Casa (ages 2.5-6) and Elementary (ages 6-12) programs. Most schools offer tours by appointment. Spaces fill quickly for fall programs.</p>
-            <a href="/oakville-montessori-schools" className="news-link">
-              Browse Montessori Schools →
-            </a>
-          </article>
-
-          <article className="news-card">
-            <div className="news-tag">👶 Childcare</div>
-            <h3>Licensed Daycare Waitlists</h3>
-            <p className="news-date">Ongoing</p>
-            <p>Oakville licensed daycares often have waitlists, especially for infant and toddler spots. Register early through Halton Region&apos;s OneList system at <strong>onelisthalton.ca</strong> to get on multiple waitlists.</p>
-            <a href="/oakville-daycares" className="news-link">
-              Browse Daycares →
-            </a>
-          </article>
-
-          <article className="news-card">
-            <div className="news-tag">🎓 Secondary</div>
-            <h3>Grade 9 Transition — Course Selection</h3>
-            <p className="news-date">Spring 2026</p>
-            <p>Grade 8 students entering HDSB or HCDSB secondary schools should complete course selection through their school guidance office. Specialized programs (IB, AP, Arts) may have additional application requirements.</p>
-            <a href="/oakville-public-schools" className="news-link">
-              Browse Public Schools →
-            </a>
-          </article>
-        </div>
-      </section>
-
-      {/* FAQ Section — visible for AIO/GEO crawlers */}
+      {/* 3. FAQ — bottom for SEO/AIO */}
       <section className="faq-section" aria-label="Frequently asked questions">
         <h2 className="section-title">Frequently Asked Questions</h2>
         <div className="faq-grid">

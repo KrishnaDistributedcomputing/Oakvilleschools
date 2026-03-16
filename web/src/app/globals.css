@@ -887,6 +887,15 @@ a.stat-pill:hover {
   gap: 1.25rem;
 }
 
+.news-urgent-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #fde8e8;
+}
+
 .news-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -1160,6 +1169,10 @@ a.stat-pill:hover {
   }
 
   .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-urgent-row {
     grid-template-columns: 1fr;
   }
 
