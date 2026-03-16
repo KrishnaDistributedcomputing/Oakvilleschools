@@ -36,6 +36,14 @@ export interface School {
   image_url: string | null;
   categories: string | null;
   opening_hours: any | null;
+  principal_name: string | null;
+  school_email: string | null;
+  school_number: string | null;
+  ossd_credits: string | null;
+  program_type: string | null;
+  association_membership: string | null;
+  school_level: string | null;
+  fax: string | null;
 }
 
 export interface SchoolListResponse {

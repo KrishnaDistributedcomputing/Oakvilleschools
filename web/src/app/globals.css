@@ -974,6 +974,191 @@ a.stat-pill:hover {
   border-radius: 2px;
 }
 
+.news-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-card-link:hover {
+  text-decoration: underline;
+}
+
+/* ─── Admissions Landing Pages ─── */
+.admit-page {
+  margin: -2rem;
+}
+
+.admit-hero {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.admit-hero h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  font-weight: 800;
+}
+
+.admit-hero p {
+  font-size: 1.1rem;
+  opacity: 0.92;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.admit-hero-green { background: linear-gradient(135deg, #1a5276, #27ae60); }
+.admit-hero-purple { background: linear-gradient(135deg, #1a5276, #8e44ad); }
+.admit-hero-blue { background: linear-gradient(135deg, #1a5276, #2980b9); }
+.admit-hero-orange { background: linear-gradient(135deg, #1a5276, #e67e22); }
+.admit-hero-teal { background: linear-gradient(135deg, #1a5276, #1abc9c); }
+.admit-hero-red { background: linear-gradient(135deg, #1a5276, #e74c3c); }
+
+.admit-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.admit-content {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.admit-summary h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.admit-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.admit-info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.admit-info-card h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.admit-info-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.admit-info-card ul {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.admit-cta-bar {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.admit-schools-title {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin: 2rem 0 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+}
+
+.admit-schools-subtitle {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.admit-schools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admit-school-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.admit-school-row:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateX(4px);
+}
+
+.admit-school-row:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.admit-school-info h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.15rem;
+}
+
+.admit-school-info p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.admit-school-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.admit-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  background: #f0f4f8;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.admit-badge-gold {
+  background: #fef9e7;
+  color: #d68910;
+}
+
+.admit-school-actions .admit-link {
+  font-size: 0.85rem;
+  color: var(--primary-light);
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* ─── FAQ Section ─── */
 .faq-section {
   padding: 1rem 0 2rem;
@@ -1175,6 +1360,13 @@ a.stat-pill:hover {
   .news-urgent-row {
     grid-template-columns: 1fr;
   }
+
+  .admit-page { margin: -1rem; }
+  .admit-hero { padding: 2rem 1rem; }
+  .admit-hero h1 { font-size: 1.5rem; }
+  .admit-content { padding: 1rem; }
+  .admit-info-grid { grid-template-columns: 1fr; }
+  .admit-school-row { flex-direction: column; align-items: flex-start; }
 
   .main { padding: 1rem; }
 

@@ -113,6 +113,11 @@ export default async function SchoolDetailPage({ params }: Props) {
               🌐 Visit Website
             </a>
           )}
+          {school.school_email && (
+            <a href={`mailto:${school.school_email}`} className="cta-btn cta-btn-outline" aria-label={`Email ${school.name}`}>
+              📧 Send Email
+            </a>
+          )}
           {school.google_maps_url && (
             <a href={school.google_maps_url} target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-outline" aria-label={`Get directions to ${school.name}`}>
               🗺️ Get Directions
@@ -180,6 +185,54 @@ export default async function SchoolDetailPage({ params }: Props) {
                   View on Google Maps
                 </a>
               </span>
+            </div>
+          )}
+          {school.principal_name && (
+            <div className="detail-item">
+              <label>👤 Principal</label>
+              <span>{school.principal_name}</span>
+            </div>
+          )}
+          {school.school_email && (
+            <div className="detail-item">
+              <label>📧 Email</label>
+              <span><a href={`mailto:${school.school_email}`}>{school.school_email}</a></span>
+            </div>
+          )}
+          {school.fax && (
+            <div className="detail-item">
+              <label>📠 Fax</label>
+              <span>{school.fax}</span>
+            </div>
+          )}
+          {school.ossd_credits && (
+            <div className="detail-item">
+              <label>📜 OSSD Credits</label>
+              <span>{school.ossd_credits}</span>
+            </div>
+          )}
+          {school.program_type && (
+            <div className="detail-item">
+              <label>💻 Program Type</label>
+              <span>{school.program_type}</span>
+            </div>
+          )}
+          {school.school_level && (
+            <div className="detail-item">
+              <label>📊 School Level</label>
+              <span>{school.school_level}</span>
+            </div>
+          )}
+          {school.association_membership && school.association_membership !== 'No Association Membership' && (
+            <div className="detail-item">
+              <label>🤝 Accreditation</label>
+              <span>{school.association_membership}</span>
+            </div>
+          )}
+          {school.school_number && (
+            <div className="detail-item">
+              <label>🔢 School Number</label>
+              <span>{school.school_number}</span>
             </div>
           )}
         </div>
