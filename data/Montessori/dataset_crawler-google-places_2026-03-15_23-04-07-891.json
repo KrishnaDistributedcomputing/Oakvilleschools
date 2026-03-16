@@ -1,0 +1,712 @@
+[{
+  "title": "Western Heights Montessori Academy",
+  "totalScore": 4.7,
+  "reviewsCount": 54,
+  "street": "3065 Old Bronte Rd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.westernheightsmontessori.com/",
+  "phone": "+1 905-847-6617",
+  "categories": [
+    "Day care center",
+    "Children's camp",
+    "Montessori preschool",
+    "Summer camp organizer"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Western%20Heights%20Montessori%20Academy&query_place_id=ChIJn7bmWhtnK4gRAtOCc5nIGdU",
+  "categoryName": "Day care center"
+},
+{
+  "title": "St. Teresa of Calcutta Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "1190 Westview Terrace",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stteresa/",
+  "phone": "+1 905-825-6382",
+  "categories": [
+    "Primary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Teresa%20of%20Calcutta%20Catholic%20Elementary%20School&query_place_id=ChIJXSCzUHxdK4gRH8JnsnnHJsU",
+  "categoryName": "Primary school"
+},
+{
+  "title": "Our Lady of Peace Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "391 River Glen Blvd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/ourladyofpeace",
+  "phone": "+1 905-257-2791",
+  "categories": [
+    "Elementary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Our%20Lady%20of%20Peace%20Catholic%20Elementary%20School&query_place_id=ChIJ3wmtwV5dK4gRW8QeZ_rBEow",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "Elementary School Catholic Sainte-Marie",
+  "totalScore": 4.4,
+  "reviewsCount": 8,
+  "street": "336 Maurice Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://smo.cscmonavenir.ca/",
+  "phone": "+1 905-845-4472",
+  "categories": [
+    "Educational institution",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Elementary%20School%20Catholic%20Sainte-Marie&query_place_id=ChIJ__RDqflcK4gRsjlTDSu3AHM",
+  "categoryName": "Educational institution"
+},
+{
+  "title": "La Villa Montessori School",
+  "reviewsCount": null,
+  "street": "1943 Ironoak Wy",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://www.lvms.ca/",
+  "phone": "+1 905-844-1900",
+  "categories": [
+    "Day care center",
+    "Child care agency",
+    "Elementary school",
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=La%20Villa%20Montessori%20School&query_place_id=ChIJg9koh2REK4gRipA6ugHrT1I",
+  "categoryName": "Day care center"
+},
+{
+  "title": "Peace of Mind Montessori School",
+  "totalScore": 4.8,
+  "reviewsCount": 38,
+  "street": "1525 Litchfield Rd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.pm-ms.ca/",
+  "phone": "+1 905-842-4800",
+  "categories": [
+    "Montessori preschool",
+    "Preschool"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Peace%20of%20Mind%20Montessori%20School&query_place_id=ChIJfwJYcSxdK4gRgB30fqqRnqY",
+  "categoryName": "Montessori preschool"
+},
+{
+  "title": "Glen Abbey Childcare & Montessori Centre",
+  "totalScore": 4.1,
+  "reviewsCount": 20,
+  "street": "1240 Old Abbey Ln",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.glenabbeychildcare.ca/",
+  "phone": "+1 905-469-3333",
+  "categories": [
+    "Day care center"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Glen%20Abbey%20Childcare%20%26%20Montessori%20Centre&query_place_id=ChIJw93OEAxdK4gRcWq2TjJxfO0",
+  "categoryName": "Day care center"
+},
+{
+  "title": "Glen Abbey Montessori School",
+  "reviewsCount": null,
+  "street": "1081 Glen Valley Rd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.glenabbeymontessori.com/",
+  "phone": "+1 905-825-2121",
+  "categories": [
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Glen%20Abbey%20Montessori%20School&query_place_id=ChIJL-kD6npdK4gRTFW8uVbOIa8",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Trafalgar Ridge Montessori School",
+  "reviewsCount": null,
+  "street": "2379 Trafalgar Rd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://trms.ca/",
+  "phone": "+1 905-257-5955",
+  "categories": [
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Trafalgar%20Ridge%20Montessori%20School&query_place_id=ChIJHyFp1stCK4gRz5LMbcgIoKI",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Prestige Daycare, Preschool & Montessori",
+  "totalScore": 3.9,
+  "reviewsCount": 17,
+  "street": "2530 Third Line",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://prestigemontessori.com/",
+  "phone": "+1 905-825-8804",
+  "categories": [
+    "Day care center",
+    "Montessori preschool"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Prestige%20Daycare%2C%20Preschool%20%26%20Montessori&query_place_id=ChIJP6IFYJ5nK4gRf3yua-Cl2f8",
+  "categoryName": "Day care center"
+},
+{
+  "title": "The Little Flower Montessori School",
+  "reviewsCount": null,
+  "street": "2110 Redstone Crescent",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://thelittleflowermontessori.com/",
+  "phone": "+1 647-401-3329",
+  "categories": [
+    "Montessori school",
+    "School house"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=The%20Little%20Flower%20Montessori%20School&query_place_id=ChIJH1IcEZ5nK4gRjnyr6cVyrME",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Dearcroft Montessori School – Trafalgar Crossing",
+  "reviewsCount": null,
+  "street": "297 Oak Walk Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://dearcroftmontessori.com/our-campuses/trafalgar-crossing/",
+  "phone": "+1 905-257-3200",
+  "categories": [
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Dearcroft%20Montessori%20School%20%E2%80%93%20Trafalgar%20Crossing&query_place_id=ChIJKbHzL7NDK4gRMfnFPR5rSV8",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Walden International School",
+  "reviewsCount": null,
+  "street": "2035 Upper Middle Rd E",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://waldeninternationalschool.com/",
+  "phone": "+1 905-338-6236",
+  "categories": [
+    "International school",
+    "Private college"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Walden%20International%20School&query_place_id=ChIJKeTSJx0VK4gRXMaABKfGzWk",
+  "categoryName": "International school"
+},
+{
+  "title": "Marian Montessori School",
+  "totalScore": 5,
+  "reviewsCount": 6,
+  "street": "1265 Heritage Way",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://www.marianmontessorischool.com/",
+  "phone": "+1 905-827-8125",
+  "categories": [
+    "Day care center"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Marian%20Montessori%20School&query_place_id=ChIJa6EpWIpdK4gRx2B6BXIKpSs",
+  "categoryName": "Day care center"
+},
+{
+  "title": "Dearcroft Montessori School",
+  "reviewsCount": null,
+  "street": "1167 Lakeshore Rd E",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.dearcroft-montessori.com/",
+  "phone": "+1 905-844-2114",
+  "categories": [
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Dearcroft%20Montessori%20School&query_place_id=ChIJ36mhFKFcK4gR3H719GMNSlI",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "St Mildred's-Lightbourn School",
+  "reviewsCount": null,
+  "street": "1080 Linbrook Rd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.smls.on.ca/",
+  "phone": "+1 905-845-2386",
+  "categories": [
+    "Private educational institution",
+    "Kindergarten"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St%20Mildred's-Lightbourn%20School&query_place_id=ChIJ030uKLpcK4gRJySlHHOfJZA",
+  "categoryName": "Private educational institution"
+},
+{
+  "title": "Pristine Montessori",
+  "reviewsCount": null,
+  "street": "Stocksbridge Ave",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://pristinemontessori.com/",
+  "phone": "+1 416-523-1037",
+  "categories": [
+    "Montessori school",
+    "Kindergarten"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Pristine%20Montessori&query_place_id=ChIJ-bjgHjtnK4gRjHgp3x-D0kI",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Hopedale Montessori School",
+  "totalScore": 5,
+  "reviewsCount": 4,
+  "street": "156 Third Line",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.hopedalemontessori.ca/",
+  "phone": "+1 905-847-1165",
+  "categories": [
+    "Day care center"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Hopedale%20Montessori%20School&query_place_id=ChIJpR1jp9ZdK4gRVfKZ8WdRH8U",
+  "categoryName": "Day care center"
+},
+{
+  "title": "Hopedale Montessori School",
+  "totalScore": 5,
+  "reviewsCount": 2,
+  "street": "160 William St",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.hopedalemontessori.ca/",
+  "phone": "+1 905-338-5247",
+  "categories": [
+    "Day care center"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Hopedale%20Montessori%20School&query_place_id=ChIJoV0KJIxcK4gRj2kd5MZY_zs",
+  "categoryName": "Day care center"
+},
+{
+  "title": "École élémentaire du Chêne",
+  "reviewsCount": null,
+  "street": "150 Ridge Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://csviamonde.ca/nos-ecoles/trouver-une-ecole/fiche-ecole/ecole-elementaire-du-chene",
+  "phone": "+1 905-815-8900",
+  "categories": [
+    "Elementary school",
+    "General education school",
+    "Public educational institution"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=%C3%89cole%20%C3%A9l%C3%A9mentaire%20du%20Ch%C3%AAne&query_place_id=ChIJj_ffvN9cK4gRzlvxoHuWwTM",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "River Oaks Public School",
+  "reviewsCount": null,
+  "street": "2173 Munn's Ave",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://riv.hdsb.ca/",
+  "phone": "+1 905-842-7430",
+  "categories": [
+    "Elementary school",
+    "Primary school",
+    "School"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=River%20Oaks%20Public%20School&query_place_id=ChIJL1vgakFdK4gRUYVfyxyyUX4",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "Assumption Academy",
+  "reviewsCount": null,
+  "street": "1414 Burnhamthorpe Rd W",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://www.assumptionacademy.ca/",
+  "phone": "+1 647-905-8240",
+  "categories": [
+    "General education school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Assumption%20Academy&query_place_id=ChIJz0fhukhFK4gRtdKb1cYjaXk",
+  "categoryName": "General education school"
+},
+{
+  "title": "Oakville Montessori & Home Daycare",
+  "totalScore": 5,
+  "reviewsCount": 8,
+  "street": "483 Underwood Crescent",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://oakvillemontessorianddaycare.blogspot.com/",
+  "phone": "+1 905-847-9965",
+  "categories": [
+    "Family day care service",
+    "Day care center",
+    "Private tutor",
+    "School"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Oakville%20Montessori%20%26%20Home%20Daycare&query_place_id=ChIJb7ccOYBdK4gRfOfrArwiCfM",
+  "categoryName": "Family day care service"
+},
+{
+  "title": "Kinderhuis Montessori",
+  "reviewsCount": null,
+  "street": "785 Pacific Rd #19",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.kmps.ca/",
+  "phone": "+1 905-827-8878",
+  "categories": [
+    "Montessori school",
+    "Day care center",
+    "Kindergarten"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Kinderhuis%20Montessori&query_place_id=ChIJKQcNlvldK4gRNCEIQEcvSK0",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Mater Boni Consilii Academy",
+  "reviewsCount": null,
+  "street": "1225 Rebecca St",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://www.mbcahalton.com/",
+  "phone": "+1 416-700-9733",
+  "categories": [
+    "Private educational institution",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Mater%20Boni%20Consilii%20Academy&query_place_id=ChIJWaViqHFdK4gRg8lwKZ1WwmU",
+  "categoryName": "Private educational institution"
+},
+{
+  "title": "Modern Montessori Academy",
+  "reviewsCount": null,
+  "street": "74 Florence Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://modernmontessoriacademy.ca/",
+  "phone": "+1 226-246-1506",
+  "categories": [
+    "General education school",
+    "Educational consultant",
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Modern%20Montessori%20Academy&query_place_id=ChIJb9XF9iVAr2ARy3Sih4ulJhE",
+  "categoryName": "General education school"
+},
+{
+  "title": "Western Heights Montessori Academy Morrison Campus",
+  "reviewsCount": null,
+  "street": "186 Morrison Rd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.westernheightsmontessori.com/",
+  "phone": "+1 905-901-1700",
+  "categories": [
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Western%20Heights%20Montessori%20Academy%20Morrison%20Campus&query_place_id=ChIJF5wTnVJdK4gRaanBX_EHvOs",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Clanmore Montessori School",
+  "reviewsCount": null,
+  "street": "2463 Lakeshore Rd E",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.clanmore.ca/",
+  "phone": "+1 905-337-8283",
+  "categories": [
+    "Montessori school",
+    "Elementary school",
+    "Middle school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Clanmore%20Montessori%20School&query_place_id=ChIJ31cpm7dEK4gRlYEExvPKonU",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "St. Mary Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "2175 Colonel William Pkwy",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stmary/",
+  "phone": "+1 905-469-0038",
+  "categories": [
+    "Primary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Mary%20Catholic%20Elementary%20School&query_place_id=ChIJ1YsthDxnK4gRu1PvAP4N-Yk",
+  "categoryName": "Primary school"
+},
+{
+  "title": "St. Joan of Arc Catholic School",
+  "reviewsCount": null,
+  "street": "2912 Westoak Trails Blvd",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stjoanofarc/",
+  "phone": "+1 905-847-3581",
+  "categories": [
+    "Elementary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Joan%20of%20Arc%20Catholic%20School&query_place_id=ChIJ5yIqa2tnK4gRiUdGh7Hfd6M",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "St. George Christian Academy",
+  "totalScore": 5,
+  "reviewsCount": 5,
+  "street": "3175 Dundas St W",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://stgcacademy.ca/",
+  "phone": "+1 905-337-5811",
+  "categories": [
+    "Educational institution"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20George%20Christian%20Academy&query_place_id=ChIJVVXF3NhcK4gRngMbq7qoYB0",
+  "categoryName": "Educational institution"
+},
+{
+  "title": "Heritage Glen Public School",
+  "reviewsCount": null,
+  "street": "1641 Heritage Way",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://her.hdsb.ca/",
+  "phone": "+1 905-847-5496",
+  "categories": [
+    "Elementary school",
+    "School"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Heritage%20Glen%20Public%20School&query_place_id=ChIJi7B7T2JnK4gRdVUCcYQZfII",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "Fern Hill School Oakville Campus",
+  "reviewsCount": null,
+  "street": "3300 Ninth Line",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.fernhillschool.com/",
+  "phone": "+1 905-257-0022",
+  "categories": [
+    "Private educational institution",
+    "Educational institution",
+    "Elementary school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Fern%20Hill%20School%20Oakville%20Campus&query_place_id=ChIJYz8NCxZDK4gR3VWRA9tQqKs",
+  "categoryName": "Private educational institution"
+},
+{
+  "title": "St. Dominic Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "2405 Rebecca St",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stdominic",
+  "phone": "+1 905-827-4401",
+  "categories": [
+    "Elementary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Dominic%20Catholic%20Elementary%20School&query_place_id=ChIJz_RmTAteK4gRIxtAxrsec-I",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "Oakville Christian School",
+  "reviewsCount": null,
+  "street": "112 Third Line",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://oakvillechristianschool.com/",
+  "phone": "+1 905-825-1247",
+  "categories": [
+    "General education school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Oakville%20Christian%20School&query_place_id=ChIJB_oEJ9RdK4gRhuDtLItSiWE",
+  "categoryName": "General education school"
+},
+{
+  "title": "St. Matthew Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "1050 Nottinghill Gate",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stmatthew",
+  "phone": "+1 905-847-0088",
+  "categories": [
+    "Elementary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Matthew%20Catholic%20Elementary%20School&query_place_id=ChIJ_064PKBdK4gRzH6d-GcuQUc",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "St. Luke Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "2750 Kingsway Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stluke",
+  "phone": "+1 905-829-1700",
+  "categories": [
+    "Primary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Luke%20Catholic%20Elementary%20School&query_place_id=ChIJLaLTX2hDK4gR6TMtO96wbAM",
+  "categoryName": "Primary school"
+},
+{
+  "title": "St. Marguerite d'Youville Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "1359 Bayshire Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stmarguerite/",
+  "phone": "+1 905-849-7772",
+  "categories": [
+    "Elementary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Marguerite%20d'Youville%20Catholic%20Elementary%20School&query_place_id=ChIJw0Wf5CBDK4gRj5bN49ntyOo",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "St. Michael Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "165 Sewell Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stmichael/",
+  "phone": "+1 905-844-6811",
+  "categories": [
+    "Elementary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Michael%20Catholic%20Elementary%20School&query_place_id=ChIJf29bZ99cK4gR0Sl5isLkXbQ",
+  "categoryName": "Elementary school"
+},
+{
+  "title": "Learning Blocks Montessori School - Oakville",
+  "totalScore": 4.8,
+  "reviewsCount": 86,
+  "phone": "(905) 465-2489",
+  "categories": [
+    "Day care center"
+  ],
+  "url": "https://www.google.com/maps/place/Learning Blocks Montessori School - Oakville/@43.42984,-79.746898,14z/data=!3m1!4b1!4m9!3m8!5m2!4m1!1i2!8m2!3d43.42984!4d-79.746898!16snull!17Bnull",
+  "categoryName": "Day care center"
+},
+{
+  "title": "St. Vincent Catholic Elementary School",
+  "reviewsCount": null,
+  "street": "1280 Braeside Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "https://elem.hcdsb.org/stvincent/",
+  "phone": "+1 905-849-0777",
+  "categories": [
+    "Primary school",
+    "Catholic school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=St.%20Vincent%20Catholic%20Elementary%20School&query_place_id=ChIJEfopQq9cK4gRdvhZfw4FZ3c",
+  "categoryName": "Primary school"
+},
+{
+  "title": "Western Heights Montessori Academy Maple Grove Campus",
+  "totalScore": 4.8,
+  "reviewsCount": 51,
+  "street": "346 Maple Grove Dr",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.westernheightsmontessori.com/",
+  "phone": "+1 905-849-4777",
+  "categories": [
+    "Day care center",
+    "Montessori preschool",
+    "Family day care service",
+    "Summer camp organizer"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Western%20Heights%20Montessori%20Academy%20Maple%20Grove%20Campus&query_place_id=ChIJn6yu0qpcK4gRJ2CTvjx-MLw",
+  "categoryName": "Day care center"
+},
+{
+  "title": "Heritage Montessori",
+  "reviewsCount": null,
+  "street": "1289 Marlborough Ct #20",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "phone": "+1 905-842-3061",
+  "categories": [
+    "Montessori school"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Heritage%20Montessori&query_place_id=ChIJyVEfvddcK4gRJo2QeDb4rfI",
+  "categoryName": "Montessori school"
+},
+{
+  "title": "Western Heights Montessori Academy - Westoak Campus",
+  "totalScore": 4.8,
+  "reviewsCount": 17,
+  "street": "2690 Westoak Trails Blvd Unit 11-15",
+  "city": "Oakville",
+  "state": "Ontario",
+  "countryCode": "CA",
+  "website": "http://www.westernheightsmontessori.com/",
+  "phone": "+1 905-338-7207",
+  "categories": [
+    "Day care center",
+    "Montessori preschool",
+    "Summer camp organizer"
+  ],
+  "url": "https://www.google.com/maps/search/?api=1&query=Western%20Heights%20Montessori%20Academy%20-%20Westoak%20Campus&query_place_id=ChIJ5a_KAMBnK4gRYXL5YzLvbtw",
+  "categoryName": "Day care center"
+}]

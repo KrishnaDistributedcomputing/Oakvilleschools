@@ -29,6 +29,13 @@ export interface School {
   licensed: boolean | null;
   latitude: number | null;
   longitude: number | null;
+  rating: number | null;
+  reviews_count: number | null;
+  google_maps_url: string | null;
+  description: string | null;
+  image_url: string | null;
+  categories: string | null;
+  opening_hours: any | null;
 }
 
 export interface SchoolListResponse {

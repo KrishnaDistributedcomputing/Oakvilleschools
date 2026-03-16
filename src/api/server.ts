@@ -71,7 +71,7 @@ app.get('/api/schools', async (req: Request, res: Response, next: NextFunction) 
     const total = parseInt(countResult.rows[0].count, 10);
 
     const result = await query(
-      `SELECT id, name, slug, school_type, subtype, operator, address_line_1, city, province, postal_code, phone, website, grades, age_range, licensed, latitude, longitude, created_at, updated_at
+      `SELECT id, name, slug, school_type, subtype, operator, address_line_1, city, province, postal_code, phone, website, grades, age_range, licensed, latitude, longitude, rating, reviews_count, google_maps_url, description, image_url, categories, opening_hours, created_at, updated_at
        FROM schools ${whereClause}
        ORDER BY name ASC
        LIMIT $${paramIdx++} OFFSET $${paramIdx++}`,

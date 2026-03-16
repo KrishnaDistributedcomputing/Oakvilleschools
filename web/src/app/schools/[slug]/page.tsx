@@ -57,57 +57,134 @@ export default async function SchoolDetailPage({ params }: Props) {
       </div>
 
       <div className="school-detail">
-        <span className="badge">{school.school_type}</span>
-        <h1>{school.name}</h1>
+        {school.image_url && (
+          <div className="school-detail-hero">
+            <img src={school.image_url} alt={school.name} />
+          </div>
+        )}
+
+        <div className="school-detail-header">
+          <span className="badge">{school.school_type}</span>
+          {school.subtype && school.subtype !== school.school_type && (
+            <span className="badge badge-outline">{school.subtype}</span>
+          )}
+          <h1>{school.name}</h1>
+          {school.categories && (
+            <p className="school-categories">{school.categories}</p>
+          )}
+        </div>
+
+        {/* Rating & Reviews */}
+        {school.rating && (() => {
+          const r = typeof school.rating === 'string' ? parseFloat(school.rating) : school.rating;
+          if (!r || isNaN(r)) return null;
+          return (
+            <div className="rating-block">
+              <span className="rating-stars">
+                {'★'.repeat(Math.floor(r))}
+                {r % 1 >= 0.5 ? '½' : ''}
+                {'☆'.repeat(5 - Math.floor(r) - (r % 1 >= 0.5 ? 1 : 0))}
+              </span>
+              <span className="rating-score">{r.toFixed(1)}</span>
+              {school.reviews_count != null && school.reviews_count > 0 && (
+                <span className="rating-count">({school.reviews_count} reviews)</span>
+              )}
+            </div>
+          );
+        })()}
+
+        {/* Description */}
+        {school.description && (
+          <div className="school-description">
+            <h2>About</h2>
+            <p>{school.description}</p>
+          </div>
+        )}
 
         <div className="detail-grid">
           {school.address_line_1 && (
             <div className="detail-item">
-              <label>Address</label>
+              <label>📍 Address</label>
               <span>{school.address_line_1}, {school.city}, {school.province} {school.postal_code}</span>
             </div>
           )}
           {school.phone && (
             <div className="detail-item">
-              <label>Phone</label>
-              <span>{school.phone}</span>
+              <label>📞 Phone</label>
+              <span><a href={`tel:${school.phone}`}>{school.phone}</a></span>
             </div>
           )}
           {school.website && (
             <div className="detail-item">
-              <label>Website</label>
+              <label>🌐 Website</label>
               <span>
                 <a href={school.website} target="_blank" rel="noopener noreferrer">
-                  {school.website.replace(/^https?:\/\/(www\.)?/, '')}
+                  {school.website.replace(/^https?:\/\/(www\.)?/, '').slice(0, 40)}
                 </a>
               </span>
             </div>
           )}
           {school.grades && (
             <div className="detail-item">
-              <label>Grades</label>
+              <label>🎓 Grades</label>
               <span>{school.grades}</span>
             </div>
           )}
           {school.age_range && (
             <div className="detail-item">
-              <label>Age Range</label>
+              <label>👶 Age Range</label>
               <span>{school.age_range}</span>
             </div>
           )}
           {school.operator && (
             <div className="detail-item">
-              <label>Operator</label>
+              <label>🏫 Operator / Board</label>
               <span>{school.operator}</span>
             </div>
           )}
           {school.licensed !== null && (
             <div className="detail-item">
-              <label>Licensed</label>
+              <label>✅ Licensed</label>
               <span>{school.licensed ? 'Yes' : 'No'}</span>
             </div>
           )}
+          {school.google_maps_url && (
+            <div className="detail-item">
+              <label>🗺️ Google Maps</label>
+              <span>
+                <a href={school.google_maps_url} target="_blank" rel="noopener noreferrer">
+                  View on Google Maps
+                </a>
+              </span>
+            </div>
+          )}
         </div>
+
+        {/* Opening Hours */}
+        {school.opening_hours && (
+          <div className="opening-hours">
+            <h2>Opening Hours</h2>
+            <table>
+              <tbody>
+                {Array.isArray(school.opening_hours) ? (
+                  school.opening_hours.map((entry: any, i: number) => (
+                    <tr key={i}>
+                      <td className="day-name">{typeof entry === 'string' ? entry : (entry.day || Object.keys(entry)[0])}</td>
+                      <td className="day-hours">{typeof entry === 'string' ? '' : (entry.hours || Object.values(entry)[0])}</td>
+                    </tr>
+                  ))
+                ) : typeof school.opening_hours === 'object' ? (
+                  Object.entries(school.opening_hours).map(([day, hours]: [string, any]) => (
+                    <tr key={day}>
+                      <td className="day-name">{day}</td>
+                      <td className="day-hours">{String(hours)}</td>
+                    </tr>
+                  ))
+                ) : null}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </>
   );
