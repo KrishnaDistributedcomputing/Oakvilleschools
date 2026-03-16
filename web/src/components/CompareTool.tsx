@@ -17,12 +17,14 @@ export default function CompareTool({ schools }: CompareToolProps) {
   const [drop3, setDrop3] = useState(false);
 
   const filterSchools = (q: string) => {
-    if (q.length < 2) return [];
+    const available = schools.filter(s => !selected.find(sel => sel.id === s.id));
+    if (!q.trim()) return available.slice(0, 15);
     const lower = q.toLowerCase();
-    return schools.filter(s =>
-      s.name.toLowerCase().includes(lower) &&
-      !selected.find(sel => sel.id === s.id)
-    ).slice(0, 6);
+    return available.filter(s =>
+      s.name.toLowerCase().includes(lower) ||
+      (s.school_type || '').toLowerCase().includes(lower) ||
+      (s.operator || '').toLowerCase().includes(lower)
+    ).slice(0, 15);
   };
 
   const addSchool = (school: School, slot: number) => {

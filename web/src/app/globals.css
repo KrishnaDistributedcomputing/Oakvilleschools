@@ -472,9 +472,6 @@ select:focus-visible {
 
 /* Rating block */
 .rating-block {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
   padding: 1rem 2rem;
   background: #fffbf0;
   margin: 1rem 2rem;
@@ -482,9 +479,40 @@ select:focus-visible {
   border: 1px solid #ffedb5;
 }
 
+.rating-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .rating-stars { color: #e67e22; font-size: 1.25rem; }
 .rating-score { font-size: 1.2rem; font-weight: 700; color: var(--text); }
-.rating-count { color: var(--text-light); font-size: 0.9rem; }
+
+.rating-reviews-link {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.rating-reviews-link:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.rating-source {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.rating-source a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.rating-source a:hover {
+  text-decoration: underline;
+}
 
 /* Description */
 .school-description { padding: 0 2rem; margin: 1rem 0; }
