@@ -114,6 +114,12 @@ select:focus-visible {
   font-weight: 600;
 }
 
+.nav-links .nav-highlight {
+  background: rgba(231, 76, 60, 0.3);
+  font-weight: 600;
+  border: 1px solid rgba(231, 76, 60, 0.5);
+}
+
 /* Hamburger menu - CSS only (no JS needed) */
 .nav-toggle-input { display: none; }
 .nav-toggle-label { display: none; }
@@ -1263,6 +1269,249 @@ a.stat-pill:hover {
   padding-top: 1rem;
 }
 
+/* ─── Compare Tool ─── */
+.compare-selectors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.compare-selector {
+  position: relative;
+}
+
+.compare-selector label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.compare-search-wrap {
+  position: relative;
+}
+
+.compare-search-wrap input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.compare-search-wrap input:focus {
+  border-color: var(--primary-light);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.compare-remove {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.compare-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  z-index: 100;
+  list-style: none;
+  padding: 0.25rem 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.compare-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.compare-dropdown button:hover {
+  background: #f0f7ff;
+}
+
+.compare-dd-badge {
+  font-size: 0.6rem;
+  color: white;
+  padding: 1px 5px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.compare-table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.compare-table th {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+.compare-table th:first-child {
+  width: 180px;
+  min-width: 160px;
+}
+
+.compare-school-name {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.compare-school-name:hover {
+  text-decoration: underline;
+}
+
+.compare-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.compare-table tr:hover td {
+  background: #f8f9fa;
+}
+
+.compare-label {
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.compare-placeholder {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-light);
+  background: var(--card-bg);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+.compare-hint {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ─── Resources Page ─── */
+.resource-section {
+  margin-bottom: 2.5rem;
+}
+
+.resource-heading {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.resource-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.resource-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border-top: 4px solid var(--primary-light);
+}
+
+.resource-card-green { border-top-color: #2ecc71; }
+.resource-card-purple { border-top-color: #9b59b6; }
+.resource-card-blue { border-top-color: #3498db; }
+
+.resource-card h3 {
+  font-size: 1.05rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.resource-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.resource-card li {
+  padding-left: 0;
+}
+
+.resource-card a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+
+.resource-cta {
+  text-align: center;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: var(--radius);
+  margin-top: 2rem;
+}
+
+.resource-cta h2 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.resource-cta p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.resource-cta .cta-btn {
+  margin: 0 0.5rem;
+}
+
 /* ─── Mobile Responsive ─── */
 @media (max-width: 768px) {
   /* Hamburger menu */
@@ -1367,6 +1616,11 @@ a.stat-pill:hover {
   .admit-content { padding: 1rem; }
   .admit-info-grid { grid-template-columns: 1fr; }
   .admit-school-row { flex-direction: column; align-items: flex-start; }
+
+  .compare-selectors { grid-template-columns: 1fr; }
+  .compare-table { font-size: 0.8rem; }
+  .resource-card-grid { grid-template-columns: 1fr; }
+  .resource-cta .cta-btn { display: block; margin: 0.5rem auto; }
 
   .main { padding: 1rem; }
 
