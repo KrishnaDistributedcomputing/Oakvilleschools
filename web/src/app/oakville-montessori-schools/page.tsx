@@ -1,25 +1,19 @@
 import { Metadata } from 'next';
 import { fetchSchools } from '@/lib/api';
-import SchoolList from '@/components/SchoolList';
+import SchoolListClient from '@/components/SchoolListClient';
 import { BreadcrumbJsonLd } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
   title: 'Montessori Schools in Oakville | Oakville Schools Directory',
-  description: 'Browse Montessori schools and programs in Oakville, Ontario.',
+  description: 'Find Montessori schools and programs in Oakville, Ontario. Compare ratings, read reviews, and find the perfect Montessori education.',
 };
 
 export const dynamic = 'force-dynamic';
 
-export default async function MontessoriSchoolsPage({
-  searchParams,
-}: {
-  searchParams: { page?: string };
-}) {
-  const page = parseInt(searchParams.page || '1', 10);
-
-  let data = { data: [] as any[], pagination: { page: 1, limit: 20, total: 0, totalPages: 0 } };
+export default async function MontessoriSchoolsPage() {
+  let data = { data: [] as any[], pagination: { total: 0 } };
   try {
-    data = await fetchSchools({ type: 'montessori', page: String(page), limit: '20' });
+    data = await fetchSchools({ type: 'montessori', limit: '500' });
   } catch {}
 
   return (
@@ -31,12 +25,12 @@ export default async function MontessoriSchoolsPage({
           { name: 'Montessori Schools', url: '/oakville-montessori-schools' },
         ]}
       />
-      <div className="breadcrumbs">
-        <a href="/">Home</a> / <a href="/oakville-schools">Schools</a> / <span>Montessori Schools</span>
-      </div>
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/oakville-schools">Schools</a> <span aria-hidden="true">/</span> <span aria-current="page">Montessori Schools</span>
+      </nav>
       <h1 className="page-title">Oakville Montessori Schools</h1>
       <p className="page-subtitle">{data.pagination.total} Montessori schools and programs.</p>
-      <SchoolList schools={data.data} />
+      <SchoolListClient schools={data.data} />
     </>
   );
 }

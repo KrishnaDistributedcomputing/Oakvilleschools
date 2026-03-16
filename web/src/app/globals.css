@@ -1,13 +1,19 @@
 :root {
   --primary: #1a5276;
   --primary-light: #2980b9;
+  --primary-dark: #154360;
   --bg: #f8f9fa;
   --card-bg: #ffffff;
   --text: #2c3e50;
-  --text-light: #7f8c8d;
-  --border: #e0e0e0;
+  --text-light: #566573;
+  --border: #d5dbdb;
   --radius: 8px;
+  --focus-ring: 0 0 0 3px rgba(41, 128, 185, 0.5);
+  --success: #27ae60;
+  --warning: #f39c12;
 }
+
+/* WCAG: Ensure minimum 4.5:1 contrast ratio */
 
 * {
   margin: 0;
@@ -20,8 +26,39 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
+/* ─── Skip Link (WCAG 2.4.1) ─── */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--warning);
+}
+
+/* ─── Focus Styles (WCAG 2.4.7) ─── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ─── Header & Nav ─── */
 .header {
   background: var(--primary);
   color: white;
@@ -29,7 +66,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 .nav {
@@ -38,66 +75,211 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  min-height: 60px;
+  flex-wrap: wrap;
 }
 
 .logo {
   color: white;
   text-decoration: none;
-  font-size: 1.25rem;
   font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
+.logo:hover { opacity: 0.9; }
+
+.logo-icon { font-size: 1.4rem; }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255,255,255,0.9);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: rgba(255,255,255,0.15);
   color: white;
 }
 
+.nav-links .nav-all {
+  background: rgba(255,255,255,0.15);
+  font-weight: 600;
+}
+
+/* Hamburger menu - CSS only (no JS needed) */
+.nav-toggle-input { display: none; }
+.nav-toggle-label { display: none; }
+
+/* SR-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Main Content ─── */
 .main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  min-height: calc(100vh - 128px);
+  min-height: 60vh;
 }
 
-.footer {
-  background: var(--primary);
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.875rem;
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
-/* Page headings */
+.breadcrumbs a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover { text-decoration: underline; }
+
 .page-title {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
   color: var(--primary);
+  margin-bottom: 0.25rem;
 }
 
 .page-subtitle {
   color: var(--text-light);
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
 }
 
-/* School cards grid */
+/* ─── Search & Filter Bar ─── */
+.search-filter-bar {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.search-input-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.search-input-wrap input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.search-input-wrap input:focus {
+  border-color: var(--primary-light);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-light);
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.filter-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 150px;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.filter-group select {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  border-color: var(--primary-light);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Results summary */
+.results-summary {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-light);
+}
+
+.no-results p:first-child { font-size: 1.1rem; margin-bottom: 0.5rem; }
+
+/* ─── School Cards Grid ─── */
 .school-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .school-card {
@@ -116,11 +298,16 @@ body {
   transform: translateY(-2px);
 }
 
+.school-card:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
 .school-card-image {
   width: 100%;
   height: 180px;
   overflow: hidden;
-  background: #e8e8e8;
+  background: #e9ecef;
 }
 
 .school-card-image img {
@@ -129,40 +316,47 @@ body {
   object-fit: cover;
 }
 
-.school-card-body {
-  padding: 1.25rem;
-}
+.school-card-body { padding: 1.25rem; }
 
 .school-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .school-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-bottom: 0.25rem;
   color: var(--primary);
 }
 
 .school-card .meta {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-light);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.3rem;
   margin-top: 0.5rem;
 }
 
-.school-card .badge {
+.badge {
   display: inline-block;
   background: var(--primary-light);
   color: white;
   font-size: 0.75rem;
-  padding: 2px 8px;
+  padding: 2px 10px;
   border-radius: 12px;
   text-transform: capitalize;
+  font-weight: 500;
+}
+
+.badge-outline {
+  background: transparent;
+  border: 1px solid var(--primary-light);
+  color: var(--primary-light);
 }
 
 .school-categories {
@@ -174,7 +368,7 @@ body {
 
 /* Star rating */
 .star-rating {
-  color: #f4a100;
+  color: #e67e22;
   font-size: 0.9rem;
   white-space: nowrap;
 }
@@ -186,63 +380,56 @@ body {
   font-size: 0.85rem;
 }
 
-/* Filters */
-.filters {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-
-.filters input,
-.filters select {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  font-size: 0.95rem;
-  background: white;
-}
-
-.filters input:focus,
-.filters select:focus {
-  outline: none;
-  border-color: var(--primary-light);
-}
-
-/* Pagination */
+/* ─── Pagination ─── */
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.25rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .pagination button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: white;
   cursor: pointer;
-  transition: background 0.2s;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  color: var(--text);
 }
 
 .pagination button:hover:not(:disabled) {
   background: var(--primary-light);
   color: white;
+  border-color: var(--primary-light);
+}
+
+.pagination button:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
 }
 
 .pagination button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: default;
 }
 
-.pagination .active {
+.pagination button.active {
   background: var(--primary);
   color: white;
   border-color: var(--primary);
+  font-weight: 600;
 }
 
-/* Detail page */
+.pagination-ellipsis {
+  padding: 0.5rem 0.5rem;
+  color: var(--text-light);
+}
+
+/* ─── Detail Page ─── */
 .school-detail {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -254,7 +441,7 @@ body {
   width: 100%;
   height: 300px;
   overflow: hidden;
-  background: #e8e8e8;
+  background: #e9ecef;
 }
 
 .school-detail-hero img {
@@ -263,16 +450,7 @@ body {
   object-fit: cover;
 }
 
-.school-detail-header {
-  padding: 2rem 2rem 0;
-}
-
-.school-detail-header .badge-outline {
-  background: transparent;
-  border: 1px solid var(--primary-light);
-  color: var(--primary-light);
-  margin-left: 0.5rem;
-}
+.school-detail-header { padding: 2rem 2rem 0; }
 
 .school-detail h1 {
   font-size: 1.75rem;
@@ -284,7 +462,6 @@ body {
   font-size: 0.9rem;
   color: var(--text-light);
   font-style: italic;
-  margin-bottom: 0;
 }
 
 /* Rating block */
@@ -299,39 +476,55 @@ body {
   border: 1px solid #ffedb5;
 }
 
-.rating-stars {
-  color: #f4a100;
-  font-size: 1.25rem;
-}
-
-.rating-score {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.rating-count {
-  color: var(--text-light);
-  font-size: 0.9rem;
-}
+.rating-stars { color: #e67e22; font-size: 1.25rem; }
+.rating-score { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+.rating-count { color: var(--text-light); font-size: 0.9rem; }
 
 /* Description */
-.school-description {
-  padding: 0 2rem;
-  margin: 1rem 0;
+.school-description { padding: 0 2rem; margin: 1rem 0; }
+.school-description h2 { font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem; }
+.school-description p { line-height: 1.6; }
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
-.school-description h2 {
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 2px solid transparent;
 }
 
-.school-description p {
-  line-height: 1.6;
-  color: var(--text);
+.cta-btn-primary {
+  background: var(--primary-light);
+  color: white;
 }
 
+.cta-btn-primary:hover { background: var(--primary); }
+
+.cta-btn-outline {
+  background: transparent;
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+}
+
+.cta-btn-outline:hover {
+  background: var(--primary-light);
+  color: white;
+}
+
+/* Detail grid */
 .detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -345,68 +538,22 @@ body {
   color: var(--text-light);
   display: block;
   margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
-.detail-item span {
-  font-size: 1rem;
-}
-
-.detail-item a {
-  color: var(--primary-light);
-  text-decoration: none;
-}
-
-.detail-item a:hover {
-  text-decoration: underline;
-}
+.detail-item span { font-size: 1rem; }
+.detail-item a { color: var(--primary-light); text-decoration: none; }
+.detail-item a:hover { text-decoration: underline; }
 
 /* Opening hours */
-.opening-hours {
-  padding: 1rem 2rem 2rem;
-}
+.opening-hours { padding: 1rem 2rem 2rem; }
+.opening-hours h2 { font-size: 1.2rem; color: var(--primary); margin-bottom: 0.75rem; }
+.opening-hours table { width: 100%; border-collapse: collapse; }
+.opening-hours td { padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+.opening-hours .day-name { font-weight: 600; width: 140px; }
+.opening-hours .day-hours { color: var(--text-light); }
 
-.opening-hours h2 {
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin-bottom: 0.75rem;
-}
-
-.opening-hours table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.opening-hours td {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.opening-hours .day-name {
-  font-weight: 600;
-  width: 140px;
-}
-
-.opening-hours .day-hours {
-  color: var(--text-light);
-}
-
-/* Breadcrumbs */
-.breadcrumbs {
-  font-size: 0.875rem;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-}
-
-.breadcrumbs a {
-  color: var(--primary-light);
-  text-decoration: none;
-}
-
-.breadcrumbs a:hover {
-  text-decoration: underline;
-}
-
-/* Stats / hero */
+/* ─── Homepage ─── */
 .hero {
   text-align: center;
   padding: 3rem 1rem;
@@ -415,7 +562,14 @@ body {
 .hero h1 {
   font-size: 2.5rem;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
 }
 
 .stats-row {
@@ -447,25 +601,231 @@ body {
   text-transform: capitalize;
 }
 
-/* Responsive */
+/* Category cards on home page */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.category-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: block;
+}
+
+.category-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.category-card:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.category-card h3 {
+  color: var(--primary);
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* ─── Footer ─── */
+.footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h2 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.footer-section p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li { margin-bottom: 0.4rem; }
+
+.footer-section a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.footer-section a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+}
+
+/* ─── Mobile Responsive ─── */
 @media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem 0;
-    gap: 0.5rem;
+  /* Hamburger menu */
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
   }
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: white;
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  .hamburger::before { top: -7px; }
+  .hamburger::after { top: 7px; }
+
+  .nav-toggle-input:checked ~ .nav-toggle-label .hamburger {
+    background: transparent;
+  }
+
+  .nav-toggle-input:checked ~ .nav-toggle-label .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle-input:checked ~ .nav-toggle-label .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
   .nav-links {
-    gap: 0.75rem;
-    font-size: 0.85rem;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0 1rem;
+    gap: 0.25rem;
   }
+
+  .nav-toggle-input:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .main { padding: 1rem; }
+
+  .hero h1 { font-size: 1.75rem; }
+
+  .page-title { font-size: 1.5rem; }
+
   .school-grid {
     grid-template-columns: 1fr;
   }
+
   .detail-grid {
     grid-template-columns: 1fr;
   }
-  .filters {
+
+  .filter-row {
     flex-direction: column;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn { justify-content: center; }
+
+  .school-detail-hero { height: 200px; }
+
+  .school-detail-header,
+  .school-description,
+  .rating-block,
+  .detail-grid,
+  .opening-hours,
+  .cta-buttons {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .rating-block { margin: 1rem; }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+  }
+}
+
+/* ─── Print styles ─── */
+@media print {
+  .header, .footer, .search-filter-bar, .pagination, .cta-buttons, .skip-link { display: none; }
+  .main { padding: 0; }
+  .school-card { break-inside: avoid; }
+}
+
+/* ─── Reduced Motion (WCAG 2.3.3) ─── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
   }
 }

@@ -52,11 +52,11 @@ export default async function SchoolDetailPage({ params }: Props) {
         ]}
       />
 
-      <div className="breadcrumbs">
-        <a href="/">Home</a> / <a href="/oakville-schools">Schools</a> / <a href={typeUrl}>{typeLabel}</a> / <span>{school.name}</span>
-      </div>
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/oakville-schools">Schools</a> <span aria-hidden="true">/</span> <a href={typeUrl}>{typeLabel}</a> <span aria-hidden="true">/</span> <span aria-current="page">{school.name}</span>
+      </nav>
 
-      <div className="school-detail">
+      <div className="school-detail" role="article" aria-label={school.name}>
         {school.image_url && (
           <div className="school-detail-hero">
             <img src={school.image_url} alt={school.name} />
@@ -100,6 +100,30 @@ export default async function SchoolDetailPage({ params }: Props) {
             <p>{school.description}</p>
           </div>
         )}
+
+        {/* CTA Buttons */}
+        <div className="cta-buttons" role="group" aria-label="Contact actions">
+          {school.phone && (
+            <a href={`tel:${school.phone}`} className="cta-btn cta-btn-primary" aria-label={`Call ${school.name}`}>
+              📞 Call Now
+            </a>
+          )}
+          {school.website && (
+            <a href={school.website} target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-primary" aria-label={`Visit ${school.name} website`}>
+              🌐 Visit Website
+            </a>
+          )}
+          {school.google_maps_url && (
+            <a href={school.google_maps_url} target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-outline" aria-label={`Get directions to ${school.name}`}>
+              🗺️ Get Directions
+            </a>
+          )}
+          {school.address_line_1 && (
+            <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(school.address_line_1 + ', ' + school.city)}`} target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-outline" aria-label={`View ${school.name} on map`}>
+              📍 View on Map
+            </a>
+          )}
+        </div>
 
         <div className="detail-grid">
           {school.address_line_1 && (
