@@ -868,6 +868,103 @@ a.stat-pill:hover {
   color: var(--accent);
 }
 
+/* ─── News & Updates Section ─── */
+.news-section {
+  padding: 1rem 0 2rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: -0.75rem auto 1.5rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.news-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.news-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.news-urgent {
+  border-left: 4px solid #e74c3c;
+  background: linear-gradient(135deg, #fff5f5 0%, white 30%);
+}
+
+.news-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #f0f4f8;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.news-urgent .news-tag {
+  background: #fde8e8;
+  color: #c0392b;
+}
+
+.news-card h3 {
+  font-size: 1.05rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.news-date {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+
+.news-card > p:last-of-type {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.news-link {
+  display: inline-block;
+  color: var(--primary-light);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+}
+
+.news-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.news-link:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 /* ─── FAQ Section ─── */
 .faq-section {
   padding: 1rem 0 2rem;
@@ -1059,6 +1156,10 @@ a.stat-pill:hover {
   .stats-bar { margin: 0 -1rem; }
 
   .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid {
     grid-template-columns: 1fr;
   }
 
