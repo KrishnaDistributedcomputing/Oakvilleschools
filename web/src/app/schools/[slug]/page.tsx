@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { fetchSchoolBySlug } from '@/lib/api';
 import { SchoolJsonLd, BreadcrumbJsonLd } from '@/components/StructuredData';
+import ShareLike from '@/components/ShareLike';
 
 interface Props {
   params: { slug: string };
@@ -72,6 +73,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           {school.categories && (
             <p className="school-categories">{school.categories}</p>
           )}
+          <ShareLike schoolName={school.name} schoolSlug={school.slug} />
         </div>
 
         {/* Rating & Reviews */}

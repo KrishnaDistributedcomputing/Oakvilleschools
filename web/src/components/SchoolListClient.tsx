@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import { School } from '@/lib/api';
 import SearchFilterBar, { Pagination } from './SearchFilterBar';
+import ShareLike from './ShareLike';
 
 interface SchoolListClientProps {
   schools: School[];
@@ -98,6 +99,7 @@ export default function SchoolListClient({ schools, showTypeFilter = false }: Sc
                     <span aria-label={`${school.reviews_count} reviews`}>💬 {school.reviews_count} reviews</span>
                   )}
                 </div>
+                <ShareLike schoolName={school.name} schoolSlug={school.slug} compact />
               </div>
             </a>
           ))}
