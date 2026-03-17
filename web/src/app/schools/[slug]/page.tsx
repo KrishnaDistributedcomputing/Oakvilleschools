@@ -9,7 +9,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
-    const { data: school } = await fetchSchoolBySlug(params.slug);
+    const school = await fetchSchoolBySlug(params.slug);
     return {
       title: `${school.name} | Oakville Schools Directory`,
       description: `${school.name} — ${school.school_type} school in ${school.city}, Ontario. ${school.address_line_1 || ''}`,
@@ -24,8 +24,7 @@ export const dynamic = 'force-dynamic';
 export default async function SchoolDetailPage({ params }: Props) {
   let school;
   try {
-    const response = await fetchSchoolBySlug(params.slug);
-    school = response.data;
+    school = await fetchSchoolBySlug(params.slug);
   } catch {
     return (
       <div style={{ textAlign: 'center', padding: '4rem' }}>

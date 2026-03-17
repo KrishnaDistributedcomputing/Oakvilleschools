@@ -1,15 +1,10 @@
-// Server-side: use API_URL (runtime env, not baked at build time)
-// Client-side: use relative URL (Front Door / Next.js rewrites handle routing)
-function getApiBase(): string {
-  if (typeof window === 'undefined') {
-    // Server-side rendering — need the full URL to the API backend
-    return process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
-  }
-  // Client-side — use relative URL (Front Door routes /api/* to API backend)
-  return '';
-}
+import { createClient } from '@supabase/supabase-js';
 
-const API_BASE = getApiBase();
+// Supabase client — uses env vars set in Vercel
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export interface School {
   id: number;
@@ -62,20 +57,68 @@ export interface StatsResponse {
 }
 
 export async function fetchSchools(params: Record<string, string> = {}): Promise<SchoolListResponse> {
-  const searchParams = new URLSearchParams(params);
-  const res = await fetch(`${API_BASE}/api/schools?${searchParams}`);
-  if (!res.ok) throw new Error('Failed to fetch schools');
-  return res.json();
+  const page = parseInt(params.page || '1', 10);
+  const limit = parseInt(params.limit || '500', 10);
+  const type = params.type;
+  const search = params.search;
+  const offset = (page - 1) * limit;
+
+  let query = supabase.from('schools').select('*', { count: 'exact' });
+
+  if (type) {
+    query = query.eq('school_type', type);
+  }
+  if (search) {
+    query = query.ilike('name', `%${search}%`);
+  }
+
+  query = query.order('name').range(offset, offset + limit - 1);
+
+  const { data, count, error } = await query;
+
+  if (error) throw new Error(error.message);
+
+  return {
+    data: (data || []) as School[],
+    pagination: {
+      page,
+      limit,
+      total: count || 0,
+      totalPages: Math.ceil((count || 0) / limit),
+    },
+  };
 }
 
-export async function fetchSchoolBySlug(slug: string): Promise<{ data: School }> {
-  const res = await fetch(`${API_BASE}/api/schools/${encodeURIComponent(slug)}`);
-  if (!res.ok) throw new Error('School not found');
-  return res.json();
+export async function fetchSchoolBySlug(slug: string): Promise<School> {
+  const { data, error } = await supabase
+    .from('schools')
+    .select('*')
+    .eq('slug', slug)
+    .single();
+
+  if (error) throw new Error(error.message);
+  return data as School;
 }
 
 export async function fetchStats(): Promise<StatsResponse> {
-  const res = await fetch(`${API_BASE}/api/stats`);
-  if (!res.ok) throw new Error('Failed to fetch stats');
-  return res.json();
+  // Get total count
+  const { count: total } = await supabase
+    .from('schools')
+    .select('*', { count: 'exact', head: true });
+
+  // Get counts by type using RPC or manual query
+  const { data: schools } = await supabase
+    .from('schools')
+    .select('school_type');
+
+  const typeCounts: Record<string, number> = {};
+  (schools || []).forEach((s: any) => {
+    typeCounts[s.school_type] = (typeCounts[s.school_type] || 0) + 1;
+  });
+
+  const byType = Object.entries(typeCounts)
+    .map(([school_type, count]) => ({ school_type, count: String(count) }))
+    .sort((a, b) => parseInt(b.count) - parseInt(a.count));
+
+  return { total: total || 0, byType };
 }
